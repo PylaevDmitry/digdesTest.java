@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="digdesTest:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/digdesTest_jar</output-path>
+    <root id="archive" name="digdesTest.jar">
+      <element id="module-output" name="digdesTest" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/java-school.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

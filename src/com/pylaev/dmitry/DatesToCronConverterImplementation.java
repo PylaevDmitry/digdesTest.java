@@ -11,7 +11,7 @@ public class DatesToCronConverterImplementation implements DatesToCronConverter 
 
     @Override
     public String getImplementationInfo ( ) {
-        return "Pylaev D.V.\n" + getClass().getName() + "\ngit@github.com:PylaevDmitry/digdesTest.java.git\n";
+        return "Пылаев Дмитрий Вячеславович\n" + getClass().getName() + "\ngit@github.com:PylaevDmitry/digdesTest.java.git\n";
     }
 
     @Override
