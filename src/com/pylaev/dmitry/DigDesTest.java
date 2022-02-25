@@ -8,7 +8,8 @@ public class DigDesTest {
     public static void main (String[] args) throws DatesToCronConvertException {
 
         DatesToCronConverter datesToCronConverter = new DatesToCronConverterImplementation();
-        datesToCronConverter.getImplementationInfo();
+
+        System.out.println(datesToCronConverter.getImplementationInfo());
 
         String[] arr1 = {"2022-01-25T08:00:00",
                 "2022-01-25T08:30:00",
@@ -50,19 +51,19 @@ public class DigDesTest {
 
         datesToCronConverter.convert(Arrays.asList(arr3));
 
-        String[] arr4 = {"2022-01-24T19:53:00",
-                "2022-01-24T19:54:00",
-                "2022-01-24T19:55:00",
-                "2022-01-24T19:56:00",
-                "2022-06-24T19:57:00",
-                "2022-07-23T19:58:00",
-                "2022-08-23T19:59:00",
-                "2022-09-23T21:00:00",
-                "2022-10-23T21:01:00",
-                "2022-11-23T21:02:00"
-        };
-
-        datesToCronConverter.convert(Arrays.asList(arr4));
+//        String[] arr4 = {"2022-01-24T19:53:00",
+//                "2022-01-24T19:54:00",
+//                "2022-01-24T19:55:00",
+//                "2022-01-24T19:56:00",
+//                "2022-06-24T19:57:00",
+//                "2022-07-23T19:58:00",
+//                "2022-08-23T19:59:00",
+//                "2022-09-23T21:00:00",
+//                "2022-10-23T21:01:00",
+//                "2022-11-23T21:02:00"
+//        };
+//
+//        datesToCronConverter.convert(Arrays.asList(arr4));
 
         String[] arr5 = {"2022-01-24T19:53:00",
                 "2022-01-24T19:54:00",

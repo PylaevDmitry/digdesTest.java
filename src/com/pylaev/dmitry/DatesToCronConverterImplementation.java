@@ -6,10 +6,12 @@ import java.util.*;
 
 public class DatesToCronConverterImplementation implements DatesToCronConverter {
 
+    public DatesToCronConverterImplementation ( ) {
+    }
+
     @Override
     public String getImplementationInfo ( ) {
-        System.out.println("Pylaev D.V.\n" + getClass().getName() + "\nGithub");
-        return "Pylaev D.V.\n" + getClass().getName() + "\nGithub\n";
+        return "Pylaev D.V.\n" + getClass().getName() + "\ngit@github.com:PylaevDmitry/digdesTest.java.git\n";
     }
 
     @Override

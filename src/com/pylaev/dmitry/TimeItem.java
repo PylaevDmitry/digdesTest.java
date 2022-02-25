@@ -8,12 +8,31 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 public class TimeItem {
-    private final int year;
-    private final int month;
-    private final int dayOfMonth;
-    private final int hour;
-    private final int minute;
-    private final DayOfWeek dayOfWeek;
+    private int year;
+    private int month;
+    private int dayOfMonth;
+    private int hour;
+    private int minute;
+    private DayOfWeek dayOfWeek;
+
+    public TimeItem ( ) {
+    }
+
+    public TimeItem (String str) throws DatesToCronConvertException {
+        try {
+            this.year = Integer.parseInt(str.substring(0, str.indexOf("-")));
+            this.month = Integer.parseInt(str.substring(str.indexOf("-") + 1, str.lastIndexOf("-"))) - 1;
+            this.dayOfMonth = Integer.parseInt(str.substring(str.lastIndexOf("-") + 1, str.lastIndexOf("-") + 3)) - 1;
+            this.hour = Integer.parseInt(str.substring(str.indexOf("T") + 1, str.indexOf("T") + 3));
+            this.minute = Integer.parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(":") + 3));
+
+            Calendar calendar = new GregorianCalendar(year, month , dayOfMonth);
+
+            this.dayOfWeek = DayOfWeek.of(calendar.get(Calendar.DAY_OF_WEEK));
+        } catch (NumberFormatException e) {
+            throw new DatesToCronConvertException();
+        }
+    }
 
     public int getYear ( ) {
         return year;
@@ -50,22 +69,6 @@ public class TimeItem {
     @Override
     public int hashCode() {
         return Objects.hash(getYear(), getMonth(), getDayOfMonth(), getHour(), getMinute(), getDayOfWeek());
-    }
-
-    public TimeItem (String str) throws DatesToCronConvertException {
-        try {
-            this.year = Integer.parseInt(str.substring(0, str.indexOf("-")));
-            this.month = Integer.parseInt(str.substring(str.indexOf("-") + 1, str.lastIndexOf("-"))) - 1;
-            this.dayOfMonth = Integer.parseInt(str.substring(str.lastIndexOf("-") + 1, str.lastIndexOf("-") + 3)) - 1;
-            this.hour = Integer.parseInt(str.substring(str.indexOf("T") + 1, str.indexOf("T") + 3));
-            this.minute = Integer.parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(":") + 3));
-
-            Calendar calendar = new GregorianCalendar(year, month , dayOfMonth);
-
-            this.dayOfWeek = DayOfWeek.of(calendar.get(Calendar.DAY_OF_WEEK));
-        } catch (NumberFormatException e) {
-            throw new DatesToCronConvertException();
-        }
     }
 
     @Override
