@@ -56,7 +56,7 @@ public class DatesToCronConverterImplementation implements DatesToCronConverter 
         resArr[2] = (hourSolution==null)?"*":hourSolution;
         resArr[3] = (dayOfMonthSolution==null)?"*":dayOfMonthSolution;
         resArr[4] = (monthSolution==null)?"*":monthSolution;
-        resArr[5] = (dayOfWeekSolution==null)?"*":dayOfWeekSolution;
+        resArr[5] = (dayOfWeekSolution==null)?"*":dayOfWeekSolution.substring(0, 3);
 
         String result = Arrays.toString(resArr)
                 .replace(",","")
